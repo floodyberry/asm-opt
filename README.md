@@ -17,7 +17,9 @@ x86 is fully supported, and the first pass at ARM support is now in!
 * Fuzzing / benchmarking support is in [framework/](framework/).
 * Sample [app-example/main.c](app-example/main.c) provided showing use of cpuid and calling the example extension.
 * Platforms supported are x86, ARM.
-* The `framework` branch contains only the files needed to create a new library. Pull from `framework` instead of `master` to update your libraries using asm-opt!
+* The `framework` branch contains only the files needed to create a new library. Pull from `framework` instead of `master` to update your libraries using asm-opt! I use [Keeping the Framework for Your Application Up to Date with Git](http://viget.com/extend/keeping-the-framework-for-your-application-up-to-date-with-git) as a guide to set things up on new projects.
+* Set `fileMode = false` in your .gitconfig if you are on Windows (at least with TortoiseGit). Otherwise git will continually think files with the executable bit set are "modified" when they are not.
+* ARM feature detection correctly works around [NDK: Cpufeatures report ARMv7 instruction to be supported on an ARMv6 CPU](https://code.google.com/p/android/issues/detail?id=10812) and [chrome beta SSL Error during Google search](https://code.google.com/p/chromium/issues/detail?id=341598) (broken NEON support in certain ARM cpus).
 
 # HOW IT WORKS #
 
